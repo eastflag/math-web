@@ -2,14 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {UserComponent} from "./user/user.component";
-import {MainComponent} from "./user/main/main.component";
+import {HomeComponent} from "./user/home/home.component";
+import {QuestionListComponent} from "./user/question/question-list.component";
+import {ResultListComponent} from "./user/result/result-list.component";
+import {ResultViewComponent} from "./user/result/view/result-view.component";
+import {AnswerViewComponent} from "./user/result/view/answer-view.component";
 
 const appRoutes: Routes = [
   {path: '', component: UserComponent, children: [
-    {path: '', component: MainComponent},
-    // {path: 'login', component: LoginComponent},
-    // {path: 'register', component: RegisterComponent},
-    // {path: 'year', component: YearComponent},
+    {path: '', component: HomeComponent},
+    {path: 'question', component: QuestionListComponent},
+    {path: 'result', component: ResultListComponent},
+    {path: 'view/answer/:todo_id', component: AnswerViewComponent},
+    {path: 'view/result/:todo_id', component: ResultViewComponent},
     // {path: 'xi', component: XiComponent},
     // {path: 'semo', component: SemoComponent},
     // {path: 'grade/:category_id', component: GradeComponent},
