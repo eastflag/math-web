@@ -8,7 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
 import {
-  MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule,
+  MatButtonModule, MatCardModule, MatExpansionModule, MatFormFieldModule, MatGridListModule, MatIconModule,
+  MatInputModule, MatMenuModule,
   MatToolbarModule
 } from "@angular/material";
 import {HomeComponent} from "./user/home/home.component";
@@ -48,6 +49,7 @@ import { AnswerViewComponent } from './user/result/view/answer-view.component';
     MatFormFieldModule,
     MatInputModule,
     ChartsModule,
+    MatExpansionModule,
   ],
   providers: [
     AuthGuardService,

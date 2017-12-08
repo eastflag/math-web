@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-result-view',
@@ -23,7 +24,7 @@ export class ResultViewComponent implements OnInit {
     {data: [28, 48, 40, 19, 96, 27, 100], label: 'Series B'}
   ];
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
   }
@@ -63,6 +64,10 @@ export class ResultViewComponent implements OnInit {
     );
     popupWin.document.close();
 
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
