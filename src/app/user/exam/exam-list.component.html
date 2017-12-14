@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>결과목록</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form #myForm="ngForm" (ngSubmit)="addTestInfo()">
+      <div fxLayout="row" fxLayoutAlign="center start">
+        <mat-form-field fxFlex="4 1 auto">
+          <input matInput placeholder="이름" [(ngModel)]="newTestInfo.todo" name="todo" #name="ngModel" required>
+          <mat-hint align="start" style="color: red;">{{!name.value? '이름을 입력하세요.' : ''}}</mat-hint>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" fxFlex="1 1 auto" [disabled]="!myForm.form.valid">검색</button>
+      </div>
+    </form>
+
+    <hr>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>이름</th>
+        <th>시험유형</th>
+        <th>생성일</th>
+        <th>수정일</th>
+        <th>결과보기</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-template ngFor let-item [ngForOf]="testInfoList">
+        <tr *ngIf="!item.isEdited" [@flyInOut] = "'in'" appHighlight [highlightColor]="'#ff77ee'">
+          <td>
+            {{item.isFinished ? '완료' : '미완료'}}
+          </td>
+          <td [class.todo_canceled]="item.isFinished">{{item.todo}}</td>
+          <td>{{item.created | mydate: 'abc'}}</td>
+          <td>{{item.updated | date: 'yyyy-MM-dd a hh:mm'}}</td>
+          <td>
+            <button mat-raised-button color="warn" (click)="gotoExamView(item)">시험보기</button>
+          </td>
+        </tr>
+      </ng-template>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
