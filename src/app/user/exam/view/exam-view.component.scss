@@ -1,3 +1,16 @@
+.question {
+  border: solid 3px black;
+  border-radius: 15px;
+  padding: 0 10px 0 10px;
+}
+
+.question-title {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  color: #ffffff;
+}
+
 .question-header {
   display: flex;
   flex-direction: row;
@@ -105,4 +118,8 @@
   align-items: center;
 }
 
-
+.question-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

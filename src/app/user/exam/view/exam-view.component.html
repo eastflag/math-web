@@ -1,45 +1,64 @@
-<div class="question-header">
-  <div class="question-header-who">
-    <label>응시일 :</label><input type="date"><br>
-    <label>학 교 :</label><input type="text"><label>학 년 :</label><input type="text"><label>이 름 :</label><input type="text">
-  </div>
-  <div class="question-header-type">
+<div class="question">
+  <div class="question-title">
     <img src="">
-  </div>
-</div>
-
-<div class="answer-header">
-  <div class="answer-no">
-    <span>전혀 그렇지 않다</span>
-    <span>1</span>
-  </div>
-  <div class="answer-no">
-    <span>그렇지 않다</span>
-    <span>2</span>
-  </div>
-  <div class="answer-no">
-    <span>보통이다</span>
-    <span>3</span>
-  </div>
-  <div class="answer-no">
-    <span>그렇다</span>
-    <span>4</span>
-  </div>
-  <div class="answer-no">
-    <span>매우 그렇다</span>
-    <span>5</span>
-  </div>
-</div>
-
-<div class="question-view" *ngFor="let folder of folders; let i = index">
-  <div class="div-question">
-    <span class="question-no">{{folder.no}}.</span>
-    <div [ngClass]="((i+1) % 2 != 0)?'question-section':'question-section-even'">
-      <span class="question-text">{{folder.text}}</span>
-      <mat-radio-group class="example-radio-group" >
-        <mat-radio-button class="example-radio-button" fxLayout="space-between" *ngFor="let season of seasons" [value]="season"></mat-radio-button>
-      </mat-radio-group>
+    <div>
+      <h1><strong>융합인재 성향</strong> 진단검사</h1>
+      <span>
+    다르게 생각하라! Think different! | 질문하라! Ask why! | 끝까지 도전하라! Challenge yourself! | 협동하라! Seek teamwork! | 정직하라! Be honest!<br>
+    www.askwhy.co.kr
+  </span>
     </div>
   </div>
-  <hr [ngClass]="((i+1) % 10 != 0)?'question-devide':'question-devide-10unit'">
+
+
+  <div class="question-header">
+    <div class="question-header-who">
+      <label>응시일 :</label><input type="date"><br>
+      <label>학 교 :</label><input type="text"><label>학 년 :</label><input type="text"><label>이 름 :</label><input type="text">
+    </div>
+    <div class="question-header-type">
+      <img src="">
+    </div>
+  </div>
+
+  <div class="answer-header">
+    <div class="answer-no">
+      <span>전혀 그렇지 않다</span>
+      <span>1</span>
+    </div>
+    <div class="answer-no">
+      <span>그렇지 않다</span>
+      <span>2</span>
+    </div>
+    <div class="answer-no">
+      <span>보통이다</span>
+      <span>3</span>
+    </div>
+    <div class="answer-no">
+      <span>그렇다</span>
+      <span>4</span>
+    </div>
+    <div class="answer-no">
+      <span>매우 그렇다</span>
+      <span>5</span>
+    </div>
+  </div>
+
+  <div class="question-view" *ngFor="let folder of folders; let i = index">
+    <div class="div-question">
+      <span class="question-no">{{folder.no}}.</span>
+      <div [ngClass]="((i+1) % 2 != 0)?'question-section':'question-section-even'">
+        <span class="question-text">{{folder.text}}</span>
+        <mat-radio-group class="example-radio-group" >
+          <mat-radio-button class="example-radio-button" fxLayout="space-between" *ngFor="let season of seasons" [value]="season"></mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <hr [ngClass]="((i+1) % 10 != 0)?'question-devide':'question-devide-10unit'">
+  </div>
+
+  <div class="question-footer">
+    <span>* 수고하셨습니다</span><span>(주)창의와 탐구</span><span>영재교육연구소</span>
+  </div>
 </div>
+
