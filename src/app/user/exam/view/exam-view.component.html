@@ -12,7 +12,7 @@
 
 
 
-  <div class="question-header">
+  <div class="question-who">
     <div class="question-header-who">
       <label>응시일 :</label><input type="date"><br>
       <label>학 교 :</label><input type="text"><label>학 년 :</label><input type="text"><label>이 름 :</label><input type="text">
@@ -22,30 +22,27 @@
     </div>
   </div>
 
-
-
-
-
   <div class="question-body">
     <div class="question-header">
+      <div class="question-header-space"></div>
       <div class="question-header-no">
-        <span>전혀 그렇지 않다</span>
+        <span class="question-header-no-text">전혀 그렇지 않다</span>
         <span>1</span>
       </div>
       <div class="question-header-no">
-        <span>그렇지 않다</span>
+        <span class="question-header-no-text">그렇지 않다</span>
         <span>2</span>
       </div>
       <div class="question-header-no">
-        <span>보통이다</span>
+        <span class="question-header-no-text">보통이다</span>
         <span>3</span>
       </div>
       <div class="question-header-no">
-        <span>그렇다</span>
+        <span class="question-header-no-text">그렇다</span>
         <span>4</span>
       </div>
       <div class="question-header-no">
-        <span>매우 그렇다</span>
+        <span class="question-header-no-text">매우 그렇다</span>
         <span>5</span>
       </div>
     </div>
@@ -55,10 +52,10 @@
         <div class="question-section">
           <span class="question-no">{{folder.no}}.</span>
           <div [ngClass]="((i+1) % 2 != 0)?'question-section-odd':'question-section-even'">
-            <span ng-b  ind-html-unsafe="q.CATEGORY" class="question-text">{{ folder.text }}</span>
-            <mat-radio-group class="example-radio-group">
-              <mat-radio-button class="example-radio-button" fxLayout="space-between" *ngFor="let season of seasons" [value]="season"></mat-radio-button>
-            </mat-radio-group>
+            <span class="question-text">{{ folder.text }}</span>
+            <span class="answer-box" *ngFor="let season of seasons">
+              <input type="radio" class="example-radio-button" name="{{ folder.no }}">
+            </span>
           </div>
         </div>
         <hr [ngClass]="((i+1) % 10 != 0)?'question-devide':'question-devide-10unit'">
@@ -68,6 +65,7 @@
     <div class="question-footer">
       <span>* 수고하셨습니다</span><span>(주)창의와 탐구</span><span>영재교육연구소</span>
     </div>
+
   </div>
 
 </div>
